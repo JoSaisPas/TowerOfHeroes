@@ -1,0 +1,9 @@
+
+
+<div class="flex-col border-2 border-black w-4/5">
+  <h2 class="flex-row justify-center"> Choisir image</h2>
+  <div class=" flex flex-row justify-around" >
+    <img *ngFor="let item of map |keyvalue" (click)="select(item.key)" class="w-20 h-36 mx-1 my-1 border-4 cursor-pointer  {{item.value ?'border-green-500' : 'border-black' }}" src="assets/{{item.key}}.png">
+  </div>
+</div>
+

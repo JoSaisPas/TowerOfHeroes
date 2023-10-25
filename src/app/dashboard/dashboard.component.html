@@ -1,0 +1,8 @@
+<h2 class="text-center">Top Heroes</h2>
+
+
+<div class="flex flex-col self-center w-full">
+  <a *ngFor="let hero of heroes" routerLink="/detail/{{hero.getId}}" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 self-center w-full text-center my-0.5">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{hero.Name}}</h5>
+  </a>
+</div>

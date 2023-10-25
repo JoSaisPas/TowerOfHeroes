@@ -1,0 +1,61 @@
+
+<div class="flex flex-row justify-around my-7">
+
+  <div class="flex flex-col">
+    <div class="bg-green-500"> <img class="w-48 h-80"  *ngIf="arme" src="assets/{{arme.getImage}}.png"> </div>
+  </div>
+
+  <div class="flex flex-col w-3/5">
+
+    <app-image-selector *ngIf="arme" [entity]="arme"  [value]="0" (stateChange)="updateImage($event)"></app-image-selector>
+
+    <div class="bg-amber-500"> <h2> Details</h2></div>
+
+    <div class="flex flex-col">
+
+      <div class="flex-col self-end " *ngIf="arme">
+        <p> Equilibre des points : {{arme.getStats()}} / 0 </p>
+        <p> Point max : {{arme.getMaxPoint()}} / 20 </p>
+        <button class="self-end border-2 border-black bg-red-600 w-24" (click)="resetPoints()"> Reset points</button>
+      </div>
+
+      <div class="flex flex-row border-2 border-black justify-around my-1.5 w-3/5" *ngIf="arme">
+        <label for="name"> Nom</label>
+        <input class="bg-blue-200 text-center" id="name" [(ngModel)]="arme.Name" (change)="update()">
+      </div>
+
+      <div class="flex flex-row border-2 border-black justify-around my-1.5 w-3/5" *ngIf="arme">
+        <div class="w-24"> Attaque</div>
+        <button class="border-2 border-black bg-blue-200 w-8"   (click)="subStat(arme.getId, 'attaque')"> - </button>
+        <div> {{arme.getAttaque}}</div>
+        <button class="border-2 border-black bg-blue-200 w-8"  (click)="addStat(arme.getId, 'attaque')" > + </button>
+      </div>
+
+      <div class="flex flex-row border-2 border-black justify-around my-1.5 w-3/5" *ngIf="arme">
+        <div class="w-24"> Esquive</div>
+        <button class="border-2 border-black bg-blue-200 w-8" (click)="subStat(arme.getId, 'esquive')"> - </button>
+        <div> {{arme.getEsquive }}</div>
+        <button class="border-2 border-black bg-blue-200 w-8" (click)="addStat(arme.getId, 'esquive')"> + </button>
+      </div>
+
+      <div class="flex flex-row border-2 border-black justify-around my-1.5 w-3/5" *ngIf="arme">
+        <div class="w-24"> Degat</div>
+        <button class="border-2 border-black bg-blue-200 w-8" (click)="subStat(arme.getId, 'degats')"> - </button>
+        <div> {{arme.getDegats}}</div>
+        <button class="border-2 border-black bg-blue-200 w-8" (click)="addStat(arme.getId, 'degats')"> + </button>
+      </div>
+
+      <div class="flex flex-row border-2 border-black justify-around my-1.5 w-3/5" *ngIf="arme">
+        <div class="w-24"> Point de vie</div>
+        <button class="border-2 border-black bg-blue-200 w-8" (click)="subStat(arme.getId, 'point_de_vie')"> - </button>
+        <div> {{arme.getPv}}</div>
+        <button class="border-2 border-black bg-blue-200 w-8" (click)="addStat(arme.getId, 'point_de_vie')"> + </button>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+

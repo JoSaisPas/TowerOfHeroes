@@ -1,0 +1,27 @@
+<nav class="bg-gray-800">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+
+        <div class="hidden sm:ml-6 sm:block">
+          <div class="flex space-x-4">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a routerLink="/dashboard" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+
+            <a routerLink="/heroes/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Liste héroes</a>
+            <a routerLink="/armes/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Liste Armes</a>
+
+            <a routerLink="/creation/" class="text-gray-300 hover:bg-gray-700bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Création de héro</a>
+            <a routerLink="/creationArme/" class="text-gray-300 hover:bg-gray-700bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Création d'arme</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</nav>
+
+<router-outlet></router-outlet>
+<!--<app-messages></app-messages>-->
